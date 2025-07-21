@@ -26,7 +26,7 @@ The goal of this project is to investigate whether race disproportionately influ
 1. **Clone the Repository**:
    ```bash
    git clone <repository-url>
-   cd <repository-name>
+   cd race-bias-hiring
    ```
 
 2. **Set Up a Virtual Environment** (recommended):
@@ -102,11 +102,7 @@ Contributions are welcome! Please:
 4. Push to the branch (`git push origin feature-name`).
 5. Open a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
 ## Acknowledgments
 
-- The implementation is based on *Chapter 5: Detecting Racial Bias in Hiring Using XAI: A Practical Implementation*.
+- The implementation is based on *My Master Thesis: Detecting Racial Bias in Hiring Using XAI: A Practical Implementation*.
 - Thanks to the open-source communities behind `scikit-learn`, `SHAP`, `Fairlearn`, and other libraries used in this project.
