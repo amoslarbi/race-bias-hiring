@@ -25,7 +25,7 @@ The goal of this project is to investigate whether race disproportionately influ
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git https://github.com/amoslarbi/race-bias-hiring.git
    cd race-bias-hiring
    ```
 
