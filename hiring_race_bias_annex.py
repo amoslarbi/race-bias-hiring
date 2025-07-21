@@ -8,6 +8,7 @@ import shap
 import matplotlib.pyplot as plt
 from scipy.stats import chi2_contingency
 import statsmodels.api as sm
+from statsmodels.stats.outliers_influence import variance_inflation_factor
 from sklearn.preprocessing import LabelEncoder
 from imblearn.under_sampling import RandomUnderSampler
 
@@ -155,6 +156,20 @@ rf_model_top.fit(X_train_top, y_train)
 # Compute SHAP values for the top features
 explainer = shap.TreeExplainer(rf_model_top)
 shap_values_top = explainer.shap_values(X_test_top)
+
+# Correlation matrix
+corr_matrix = X_train.corr(method='pearson')
+print("\nCorrelation Matrix:")
+print(corr_matrix)
+
+# VIF analysis
+X_vif = X_train.copy()
+X_vif = sm.add_constant(X_vif)
+vif_data = pd.DataFrame()
+vif_data['Feature'] = X_vif.columns
+vif_data['VIF'] = [variance_inflation_factor(X_vif.values, i) for i in range(X_vif.shape[1])]
+print("\nVIF Analysis:")
+print(vif_data)
 
 # Summary plot for top features (positive class)
 shap.summary_plot(shap_values_top[:,:,1], X_test_top, plot_type="bar")
